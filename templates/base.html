@@ -1,0 +1,22 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Магазин{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Мой магазин</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025</p>
+    </footer>
+</body>
+</html>l>
