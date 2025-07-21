@@ -1,3 +1,5 @@
+from datetime import datetime, timezone
+
 from django.views.generic import ListView, DetailView
 from .models import Product
 
@@ -13,6 +15,12 @@ class ProductsList(ListView):
     # Это имя списка, в котором будут лежать все объекты.
     # Его надо указать, чтобы обратиться к списку объектов в html-шаблоне.
     context_object_name = 'products'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['time_now'] = datetime.now(timezone.utc)
+        context['next_sale'] = "Распродажа в среду!"
+        return context
 
 class ProductDetail(DetailView):
     # Модель всё та же, но мы хотим получать информацию по отдельному товару
