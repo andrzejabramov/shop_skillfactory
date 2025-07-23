@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.flatpages",
     'mc_donalds',
     'simpleapp',
+    'django_filters',
 ]
 
 SITE_ID = 1
